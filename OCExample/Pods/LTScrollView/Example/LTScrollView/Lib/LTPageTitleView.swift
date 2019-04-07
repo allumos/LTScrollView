@@ -161,8 +161,6 @@ extension LTPageTitleView {
             let button = subButton(frame: buttonReact, flag: index, title: titles[index], parentView: sliderScrollView)
             let color = (index == 0 ? layout.titleSelectColor : layout.titleColor)
             button.setTitleColor(color, for: .normal)
-            let font = (index == 0 ? layout.titleSelectFont : layout.titleFont)
-            button.titleLabel?.font = font;
             upX = button.frame.origin.x + subW + layout.titleMargin
             glt_buttons.append(button)
         }
@@ -363,9 +361,7 @@ extension LTPageTitleView: LTPageViewDelegate {
     
     private func setupButtonStatusAnimation(upButton: UIButton, currentButton: UIButton)  {
         upButton.setTitleColor(layout.titleColor, for: .normal)
-        upButton.titleLabel?.font = layout.titleFont;
         currentButton.setTitleColor(layout.titleSelectColor, for: .normal)
-        currentButton.titleLabel?.font = layout.titleSelectFont;
     }
     
     private func currentIndex() -> Int {
@@ -384,13 +380,11 @@ extension LTPageTitleView: LTPageViewDelegate {
                     button.transform = CGAffineTransform(scaleX: layout.scale , y: layout.scale)
                 }
                 button.setTitleColor(self.layout.titleSelectColor, for: .normal)
-                button.titleLabel?.font = layout.titleSelectFont;
             }else {
                 if layout.isNeedScale {
                     button.transform = CGAffineTransform(scaleX: 1.0 , y: 1.0)
                 }
                 button.setTitleColor(self.layout.titleColor, for: .normal)
-                button.titleLabel?.font = layout.titleFont;
             }
         }
         glt_isClickScrollAnimation = false
@@ -448,9 +442,6 @@ extension LTPageTitleView {
             let currentColor = UIColor(r: glt_selectTitleRGBlColor.0 - colorDelta.0 * progress, g: glt_selectTitleRGBlColor.1 - colorDelta.1 * progress, b: glt_selectTitleRGBlColor.2 - colorDelta.2 * progress)
             currentButton.setTitleColor(currentColor, for: .normal)
             nextButton.setTitleColor(nextColor, for: .normal)
-
-            currentButton.titleLabel?.font = layout.titleSelectFont
-            nextButton.titleLabel?.font = layout.titleFont
         }
         if layout.isNeedScale {
             let scaleDelta = (layout.scale - 1.0) * progress

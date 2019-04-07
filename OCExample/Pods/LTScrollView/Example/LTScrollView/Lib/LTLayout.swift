@@ -25,9 +25,6 @@ public class LTLayout: NSObject {
     
     /* 标题字号 */
     @objc public var titleFont: UIFont? = UIFont.systemFont(ofSize: 16)
-
-    /* 选中标题字号 */
-    @objc public var titleSelectFont: UIFont? = UIFont.boldSystemFont(ofSize: 16)
     
     /* 滑块底部线的颜色 - UIColor.blue */
     @objc public var bottomLineColor: UIColor? = UIColor.red
@@ -81,7 +78,7 @@ public class LTLayout: NSObject {
     @objc public var isShowBounces: Bool = false
     
     /* pageView的内容ScrollView是否开启左右滚动 */
-    @objc public var isScrollEnabled: Bool = false
+    @objc public var isScrollEnabled: Bool = true
     
     /* pageView的内容ScrollView是否显示HorizontalScrollIndicator */
     @objc public var showsHorizontalScrollIndicator: Bool = true

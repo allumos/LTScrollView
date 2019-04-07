@@ -94,8 +94,9 @@
     if (!_managerView) {
         CGFloat Y = kIPhoneX ? 64 + 24.0 : 64.0;
         CGFloat H = kIPhoneX ? (self.view.bounds.size.height - Y - 34) : self.view.bounds.size.height - Y;
-        _managerView = [[LTSimpleManager alloc] initWithFrame:CGRectMake(0, Y, self.view.bounds.size.width, H) viewControllers:self.viewControllers titles:self.titles currentViewController:self layout:self.layout];
-        
+//        _managerView = [[LTSimpleManager alloc] initWithFrame:CGRectMake(0, Y, self.view.bounds.size.width, H) viewControllers:self.viewControllers titles:self.titles currentViewController:self layout:self.layout];
+        _managerView = [[LTSimpleManager alloc] initWithFrame:CGRectMake(0, Y, self.view.bounds.size.width, H) viewControllers:self.viewControllers titles:self.titles currentViewController:self layout:self.layout titleView:nil];
+
         /* 设置代理 监听滚动 */
         _managerView.delegate = self;
         
@@ -119,6 +120,13 @@
         _layout.bottomLineHeight = 4.0;
         _layout.bottomLineCornerRadius = 2.0;
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
+        _layout.isNeedScale = NO;
+        _layout.titleColor = [UIColor blackColor];
+        _layout.titleSelectColor = [UIColor blackColor];
+        _layout.titleFont = [UIFont systemFontOfSize:13];
+        _layout.titleSelectedFont = [UIFont boldSystemFontOfSize:13];
+        _layout.titleViewBgColor = [UIColor whiteColor];
+        _layout.bottomLineColor = [UIColor orangeColor];
     }
     return _layout;
 }

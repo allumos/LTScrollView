@@ -37,6 +37,10 @@ class LTSimpleManagerDemo: UIViewController {
         layout.bottomLineHeight = 4.0
         layout.bottomLineCornerRadius = 2.0
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
+        layout.titleSelectColor = UIColor(r: 1, g: 1, b: 1)
+        layout.isNeedScale = false
+        layout.titleFont = UIFont.systemFont(ofSize: 13)
+        layout.titleSelectFont = UIFont.boldSystemFont(ofSize: 13)
         return layout
     }()
     
